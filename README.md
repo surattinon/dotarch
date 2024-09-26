@@ -4,7 +4,7 @@ Config files for bootstrap my Arch Linux.
 
 ## Minimal config
 
-[Minimal Config Setup](dotarch/README.md)
+[Minimal Config Setup](dotfiles/README.md)
 
 ## Desktop config (with hyprland)
 
