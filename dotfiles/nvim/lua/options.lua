@@ -1,14 +1,14 @@
 -- To show number --
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 -- Set to false for using statusline plugin --
 vim.opt.showmode = true
 
 -- Clipboard between OS and Neovim --
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent --
 vim.opt.breakindent = true
@@ -36,9 +36,6 @@ vim.opt.splitbelow = true
 
 -- Preview subsituation live --
 vim.opt.inccommand = "split"
-
--- Highligh line which it have cursor --
-vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor --
 vim.opt.scrolloff = 5
