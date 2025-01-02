@@ -1,3 +1,9 @@
+###############
+## AUTOSTART ##
+###############
+
+source "$HOME/.tmux-auto.zsh"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -107,15 +113,6 @@ alias vim='nvim'
 
 alias nf='clear && neofetch'
 
-###############
-## AUTOSTART ##
-###############
-
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source "$HOME/.tmux-auto.zsh"
 
 ##############################
 ## Arduino Completion Setup ##

@@ -13,7 +13,7 @@ window#waybar {
 .modules-left,
 .modules-right,
 .modules-center {
-  margin: 10px 0 0 0;
+  margin-top: 4px;
 }
 
 .modules-left:first-child {
@@ -55,8 +55,8 @@ window#waybar {
 #tray {
   font-size: 12px;
   border-radius: 4px;
-  padding: 0 10px;
-  margin: 7px 3px;
+  padding: 2px 10px;
+  margin: 5px 3px;
   color: #ffffff;
   background: #2e2340;
   border-bottom: 3px solid #1e1729;
@@ -79,17 +79,18 @@ window#waybar {
 }
 
 #workspaces {
-  margin: 2px 3px 3px 3px;
-  padding: 3px 3px;
+  margin: 1px 3px 1px 3px;
+  padding: 1px 3px;
   font-size: 20px;
   border-radius: 4px;
   background: #2e2340;
   border-bottom: 3px solid #1e1729;
 }
 #workspaces button {
-  padding: 0 3px;
-  margin: 3px 4px;
-  min-width: 1px;
+  padding: 0 1px;
+  margin: 3px 2px;
+  min-width: 2px;
+  min-height: 7px;
   border-radius: 2px;
   background-color: #666666;
   color: #444444;
@@ -109,7 +110,7 @@ window#waybar {
   background-color: #ffffff;
   min-width: 7px;
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
-  margin: 2px 3px;
+  margin: 2px 2px;
   color: #afafaf;
   font-size: 12px;
 }
@@ -181,7 +182,13 @@ label:focus {
 
 #pulseaudio.muted {
   font-weight: bold;
-  color: #f75959;
+  color: #2e2340;
+  background-color: #f75959;
+  border-bottom: 3px solid #ff7aa2;
+}
+
+#pulseaudio.source-muted {
+  border-bottom: 3px solid #ff7aa2;
 }
 
 #temperature {
