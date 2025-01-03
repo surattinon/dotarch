@@ -15,6 +15,7 @@ return {
 			"query",
 			"vim",
 			"vimdoc",
+			"hyprlang",
 		},
 		auto_install = true,
 		highlight = {
