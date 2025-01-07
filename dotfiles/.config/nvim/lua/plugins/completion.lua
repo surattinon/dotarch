@@ -24,6 +24,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+			"R-nvim/cmp-r",
 		},
 
 		config = function()
@@ -74,9 +75,12 @@ return {
 					},
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "cmp_r" },
 					{ name = "path" },
 				},
 			})
+
+			require("cmp_r").setup({})
 		end,
 	},
 }

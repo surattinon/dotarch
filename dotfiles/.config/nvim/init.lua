@@ -3,7 +3,7 @@ vim.cmd("set termguicolors")
 
 -- Set leader key --
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Nerd Font support --
 vim.g.have_nerd_font = true
