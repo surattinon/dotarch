@@ -94,6 +94,7 @@ export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
 export PATH=$HOME/.local/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
 
 #######################$
 ## SHELL INTEGRATIONS ##
