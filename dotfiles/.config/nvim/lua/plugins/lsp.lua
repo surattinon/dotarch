@@ -126,7 +126,6 @@ return {
 				"rust_analyzer",
 				"html-lsp",
 				"bashls",
-				"taplo",
 
 				-- NOTE: Formatters
 				"stylua",
@@ -135,7 +134,6 @@ return {
 				"gofumpt",
 				"goimports-reviser",
 				"prettierd",
-				"prettier",
 				"google-java-format",
 
 				-- NOTE: Linters

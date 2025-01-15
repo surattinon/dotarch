@@ -17,6 +17,9 @@ return {
 			"vimdoc",
 			"hyprlang",
 			"r",
+			"rnoweb",
+			"yaml",
+			"csv",
 		},
 		auto_install = true,
 		highlight = {

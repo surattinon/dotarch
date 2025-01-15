@@ -81,9 +81,9 @@ return {
 					},
 
 					which_key = true,
-
-					transparent_background = false,
 				},
+
+				transparent_background = false,
 			})
 			vim.cmd([[colorscheme catppuccin-mocha]])
 		end,

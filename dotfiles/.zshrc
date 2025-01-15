@@ -114,6 +114,9 @@ alias vim='nvim'
 
 alias nf='clear && neofetch'
 
+alias cat='bat'
+
+alias r="R_AUTO_START=true nvim"
 
 ##############################
 ## Arduino Completion Setup ##

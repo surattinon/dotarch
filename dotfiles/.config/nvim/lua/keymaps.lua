@@ -11,11 +11,13 @@ key("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 key("n", "ss", ":split<CR>", silent)
 key("n", "sv", ":vsplit<CR>", silent)
 
--- Set key to move windows --
-key("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-key("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-key("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-key("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+local nvim_tmux_nav = require("nvim-tmux-navigation")
+key("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+key("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+key("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+key("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+key("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+key("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
 -- NOTE: RESIZE WINDOW
 key("n", "<C-w><C-h>", "10<C-w><")
