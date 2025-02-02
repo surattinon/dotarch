@@ -37,6 +37,7 @@ return {
 			rmarkdown_args = "output_dir = 'output', clean = FALSE",
 			external_term = "tmux split-window -vf -l 15",
 			silent_term = true,
+			csv_app = "/usr/bin/localc",
 		}
 		-- Check if the environment variable "R_AUTO_START" exists.
 		-- If using fish shell, you could put in your config.fish:
