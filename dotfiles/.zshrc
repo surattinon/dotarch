@@ -74,7 +74,9 @@ setopt hist_find_no_dups
 
 # Completion styling
 zstyle ':completion:*' matchar-list 'm:{a-z}={A-Za-z}'
-zstyle 'completion:*' menu no
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=always --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide__z:*' fzf-preview 'eza --icons=always --color=always'
 
 # YAZI Setup
 function y() {
@@ -90,6 +92,7 @@ function y() {
 ## ENV ##
 #########
 
+export TERM=xterm-256color
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
@@ -111,8 +114,10 @@ alias ls='eza --width 100 --icons=always --sort=extension'
 alias la='eza -la -g --icons'
 
 alias vim='nvim'
+alias vimbtw='NVIM_APPNAME=vim-btw nvim'
+alias minivim='NVIM_APPNAME=nvim.deps nvim'
 
-alias nf='clear && neofetch'
+alias clr='clear && fastfetch'
 
 alias cat='bat'
 
