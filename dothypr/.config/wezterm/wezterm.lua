@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.window_background_opacity = 0.85
 config.color_scheme = "Catppuccin Mocha"
 config.enable_tab_bar = false
 config.window_decorations = "None"
@@ -24,8 +25,8 @@ config.font_size = 11.0
 
 config.ssh_domains = {
 	{
-		name = "mc.ofbas",
-		remote_address = "ddns.ofbas.com:23",
+		name = "web-server",
+		remote_address = "ddns.ofbas.com:26",
 		username = "basu",
 
 		multiplexing = "None",

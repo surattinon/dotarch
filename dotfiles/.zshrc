@@ -1,3 +1,17 @@
+# Get terminal emulator name
+termemu=$(ps -o comm= -p $(cat /proc/$(echo $$)/stat | cut -d ' ' -f 4) | tail -1)
+
+if [ "${termemu}" = "login" ]; then
+	export TERM=linux
+elif [ "${termemu}" = "fbterm" ]; then
+	export TERM=fbterm-256color
+else
+	export TERM=xterm-256color
+fi
+
+# KEYS
+source "$HOME/.keys/openai"
+
 ###############
 ## AUTOSTART ##
 ###############
@@ -92,7 +106,8 @@ function y() {
 ## ENV ##
 #########
 
-export TERM=xterm-256color
+
+export LANG=en_US.UTF-8
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
@@ -116,6 +131,7 @@ alias la='eza -la -g --icons'
 alias vim='nvim'
 alias vimbtw='NVIM_APPNAME=vim-btw nvim'
 alias minivim='NVIM_APPNAME=nvim.deps nvim'
+alias chad='NVIM_APPNAME=nvchad nvim'
 
 alias clr='clear && fastfetch'
 
@@ -136,3 +152,16 @@ fpath=($HOME/completion_zsh $fpath)
 fpath=(~/.docker/completions \/home/basu/.local/share/zinit/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Math /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle /home/basu/.local/share/zinit/plugins/zsh-users---zsh-completions/src /home/basu/.local/share/zinit/plugins/Aloxaf---fzf-tab/lib)
 autoload -Uz compinit
 compinit
+
+########################
+## YAZI SHELL WRAPPER ##
+########################
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
