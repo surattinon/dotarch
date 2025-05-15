@@ -108,11 +108,19 @@ function y() {
 
 
 export LANG=en_US.UTF-8
+
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
+export SELECTED_EDITOR=nvim
+
+export PAGER=most
+export GROFF_NO_SGR=1 
+
 export MOZ_ENABLE_WAYLAND=1
 export PATH=$HOME/.local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+
+export WINEPREFIX=$HOME/.wine_custom
 
 #######################$
 ## SHELL INTEGRATIONS ##
@@ -129,15 +137,14 @@ alias ls='eza --width 100 --icons=always --sort=extension'
 alias la='eza -la -g --icons'
 
 alias vim='nvim'
-alias vimbtw='NVIM_APPNAME=vim-btw nvim'
-alias minivim='NVIM_APPNAME=nvim.deps nvim'
-alias chad='NVIM_APPNAME=nvchad nvim'
 
 alias clr='clear && fastfetch'
 
 alias cat='bat'
 
 alias r="R_AUTO_START=true nvim"
+
+alias lzd="lazydocker"
 
 ##############################
 ## Arduino Completion Setup ##
@@ -165,3 +172,13 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+function man() {
+  LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+  }
