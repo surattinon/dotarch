@@ -2,8 +2,15 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.window_background_opacity = 0.85
-config.color_scheme = "Catppuccin Mocha"
+config.default_prog = { os.getenv("HOME") .. "/.config/wezterm/scripts/tmux-wezterm" }
+
+local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+custom.background = "#141414"
+
+config.color_schemes = { ["Custom Catppuccin"] = custom }
+config.color_scheme = "Custom Catppuccin"
+
+config.window_background_opacity = 0.4
 config.enable_tab_bar = false
 config.window_decorations = "None"
 config.window_padding = {
@@ -21,11 +28,11 @@ config.font = wezterm.font_with_fallback({
 		family = "Kanit",
 	},
 })
-config.font_size = 11.0
+config.font_size = 10.5
 
 config.ssh_domains = {
 	{
-		name = "web-server",
+		name = "webserver",
 		remote_address = "ddns.ofbas.com:26",
 		username = "basu",
 

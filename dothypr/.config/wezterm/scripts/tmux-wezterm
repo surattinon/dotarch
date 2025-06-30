@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+SESSION_NAME="wezterm"
+
+# Check if the session already exists
+tmux has-session -t "$SESSION_NAME" 2>/dev/null
+if [ $? -eq 0 ]; then
+  # If the session exists, reattach to it; ignore nonzero exit code
+  tmux attach-session -t "$SESSION_NAME" || true
+else
+  # If the session doesn't exist, start a new one, then attach
+  tmux new-session -s "$SESSION_NAME" -d
+  tmux attach-session -t "$SESSION_NAME" || true
+fi
+
+exit 0

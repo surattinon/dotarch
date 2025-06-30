@@ -9,6 +9,7 @@ else
 	export TERM=xterm-256color
 fi
 
+
 # KEYS
 source "$HOME/.keys/openai"
 
@@ -119,6 +120,7 @@ export GROFF_NO_SGR=1
 export MOZ_ENABLE_WAYLAND=1
 export PATH=$HOME/.local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/go/bin:$PATH
 
 export WINEPREFIX=$HOME/.wine_custom
 
@@ -138,13 +140,14 @@ alias la='eza -la -g --icons'
 
 alias vim='nvim'
 
-alias clr='clear && fastfetch'
+alias clr='clear && pfetch'
 
 alias cat='bat'
 
 alias r="R_AUTO_START=true nvim"
 
 alias lzd="lazydocker"
+alias lzg="lazygit"
 
 ##############################
 ## Arduino Completion Setup ##
