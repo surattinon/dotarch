@@ -39,6 +39,9 @@ fi
 # Source zinit file
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Source NVM
+source /usr/share/nvm/init-nvm.sh
+
 #########################
 ## POWERLEVEL10K SETUP ##
 #########################
@@ -118,11 +121,16 @@ export PAGER=most
 export GROFF_NO_SGR=1 
 
 export MOZ_ENABLE_WAYLAND=1
-export PATH=$HOME/.local/bin:$PATH
-export PATH=~/.npm-global/bin:$PATH
-export PATH=~/go/bin:$PATH
 
-export WINEPREFIX=$HOME/.wine_custom
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+
+# export WINEPREFIX=$HOME/.wine_custom
+export WINEPREFIX=$HOME/.fusion360/wineprefixes/default
+
+export DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 #######################$
 ## SHELL INTEGRATIONS ##
