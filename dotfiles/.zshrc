@@ -132,6 +132,7 @@ export WINEPREFIX=$HOME/.fusion360/wineprefixes/default
 
 export DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
+
 #######################$
 ## SHELL INTEGRATIONS ##
 #######################$
@@ -147,6 +148,9 @@ alias ls='eza --width 100 --icons=always --sort=extension'
 alias la='eza -la -g --icons'
 
 alias vim='nvim'
+alias zed='zeditor'
+
+alias chadvim='NVIM_APPNAME=chadvim nvim'
 
 alias clr='clear && pfetch'
 

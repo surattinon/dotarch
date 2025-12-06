@@ -28,6 +28,52 @@
         "kbinput",
         "notifications"
       ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "cpu",
+        "ram",
+        "windowtitle",
+        "media",
+        "updates"
+      ],
+      "middle": [
+        "workspaces"
+      ],
+      "right": [
+        "systray",
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "kbinput",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "cpu",
+        "ram",
+        "windowtitle",
+        "media",
+        "updates"
+      ],
+      "middle": [
+        "workspaces"
+      ],
+      "right": [
+        "systray",
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "kbinput",
+        "notifications"
+      ]
     }
   },
   "theme.bar.menus.menu.notifications.scrollbar.color": "#b4befe",
@@ -438,5 +484,10 @@
   "bar.workspaces.showApplicationIcons": true,
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.numbered_active_indicator": "underline",
-  "theme.bar.buttons.workspaces.enableBorder": false
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "theme.bar.buttons.modules.updates.enableBorder": true,
+  "bar.customModules.updates.extendedTooltip": true,
+  "bar.customModules.updates.autoHide": true,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.enable": true
 }
